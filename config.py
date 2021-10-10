@@ -5,10 +5,13 @@ import pathlib
 class Config():
     DEBUG = True
 
-    ### Comercials settings
+    ### Upload settings
     UPLOAD_FOLDER = os.path.abspath(os.getenv('FILES_DIR',
                                               f'{pathlib.Path()}/files/'))
 
+
+
+    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
     ### DataBase Configuration ###
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or \

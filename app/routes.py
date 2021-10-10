@@ -1,13 +1,17 @@
 from flask import url_for, redirect, render_template, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
+from werkzeug.utils import secure_filename
 
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
 from app.models import User
+from config import Config
 
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/index', methods=['GET', 'POST'])
+import os
+
+@app.route('/', methods=['GET'])
+@app.route('/index', methods=['GET'])
 @login_required
 def index():
     return render_template('analyzer.html', title="Index")
@@ -54,3 +58,26 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in Config.ALLOWED_EXTENSIONS
+
+@app.route('/', methods=['POST'])
+@app.route('/index', methods=['POST'])
+@login_required
+def upload_file():
+    print('we are here')
+    if 'file' not in request.files:
+        flash('No file part')
+        return redirect(request.url)
+    file = request.files['file']
+    if file.filename == '':
+        flash('No selected file')
+        return redirect(request.url)
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        # file.save(os.path.join(Config.UPLOAD_FOLDER, filename))
+        file.save(file.filename)
+        return redirect(url_for('index'))
+    return redirect(url_for('index'))
