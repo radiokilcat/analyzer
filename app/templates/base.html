@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
     <!-- SCRIPT -->
     <script src="{{url_for('static', filename='js/lib/jquery-3.5.1.slim.min.js')}}"></script>
     <script src="{{url_for('static', filename='js/lib/popper.min.js')}}"></script>
     <script src="{{url_for('static', filename='js/lib/bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"></script>
     <title>
         {% block title %}
 
@@ -20,7 +24,7 @@
         {% endblock %}
     </style>
 </head>
-<body>
+<body class="bg-light">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="nav-link navbar-brand" href="{{ url_for('index') }}">

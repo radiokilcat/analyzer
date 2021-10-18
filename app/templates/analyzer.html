@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Analyzer app</h1>
-    <form method="POST" action="" enctype="multipart/form-data">
-      <p><input type="file" name="file" multiple></p>
-      <p><input type="submit" value="Submit"></p>
-    </form>
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Speech to text recognition</h2>
+        <p class="lead">Upload file</p>
+    </div>
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+<!--            <form method="POST" action="" enctype="multipart/form-data">-->
+<!--              <p><input type="file" name="file" multiple></p>-->
+<!--              <p><input type="submit" value="Submit"></p>-->
+<!--            </form>-->
+                <form action="{{ url_for('upload_file') }}" class="dropzone">
+                </form>
+        </div>
 {% endblock %}
