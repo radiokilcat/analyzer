@@ -28,27 +28,6 @@
     src: url('../font/Roboto-Regular.ttf');
 }
 
-.login-item {
-    display: none;
-}
-
-/* media-breakpoint */
-/* sm */
-@media screen and (min-width: 576px) {
-}
-/* md */
-@media screen and (min-width: 768px) {
-}
-/* lg */
-@media screen and (min-width: 992px) {
-    .login-item {
-        display: inline;
-    }
-}
-/* xl */
-@media screen and (min-width: 1200px) {
-}
-
 html, body {
     height: 100%;
     font-family: fontNova;
@@ -238,137 +217,34 @@ a:hover {
     color: white;
 }
 
-
-/* PLAYLIST */
-
-.btn-plan-control {
-    border: 1px solid #1489ba;
+/* Sign In */
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
-.bb-card {
-    width: 12rem;
-    border-radius: 25px;
-    border: none;
-}
-
-.bb-card:hover {
-    background-color: #D0D0D0;
-    cursor: pointer;
-    transition: background-color .4s;
-}
-
-.card-input-element:checked + .bb-card {
-    background-color: #D0D0D0;
-    border: 2px solid #1489ba;
-    border-radius: 25px;
-}
-
-.bb-card-img {
-    border-radius: inherit;
-}
-
-.bb-plan-img {
-    border-radius: 10px;
-}
-
-.commercial-img {
-    border-radius: 10px;
-}
-
-.dark-link {
-    color: #333333;
-}
-
-.dark-link:hover {
-    color: #333333;
-}
-
-.btn-light:disabled {
-    background-color: #ebebeb;
-}
-
-.bb-stat-period:hover {
-    color: white;
-}
-
-.bb-stat-period:focus,
-.bb-stat-period:active {
-    outline: none !important;
-    box-shadow: none;
-}
-
-.crop-secure-key {
-    text-overflow: ellipsis;
-    min-width: 80px;
-    max-width: 150px;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.status-ind {
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    background: red;
-    border: 0;
-}
-
-/* =========== noUiSlider */
-
-.noUi-tooltip {
-    display: none;
-}
-
-.noUi-active .noUi-tooltip {
-    display: block;
-}
-
-.noUi-target {
-    height: 4px;
-    border: 0;
-}
-
-.noUi-base {
-    height: 4px;
-    background-color: lightgray
-}
-
-.noUi-origin {
-    top: -6px;
-    right: 14px;
-}
-
-.noUi-handle {
-    max-width: 8px;
-}
-
-.noUi-handle:focus {
-    outline: none;
-}
-
-.noUi-handle:before,
-.noUi-handle:after {
-    display: none;
-}
-
-/* touch area handlers */
-.noUi-touch-area {
-    height: 40px;
-    width: 50px;
-    right: -22px;
-    top: -5px;
-    position: absolute;
-}
-
-/* touch area bar */
-.noUi-connects {
-    height: 40px;
-    top: -8px;
-    position: absolute;
-}
-
-.noUi-connect {
-    top: 8px;
-    max-height: 4px;
-    background-color: #1489ba;
-}
