@@ -7,13 +7,21 @@
         <h2>Speech to text recognition</h2>
         <p class="lead">Upload file</p>
     </div>
-    <div class="row">
-        <div class="col-md-8 order-md-1">
-<!--            <form method="POST" action="" enctype="multipart/form-data">-->
-<!--              <p><input type="file" name="file" multiple></p>-->
-<!--              <p><input type="submit" value="Submit"></p>-->
-<!--            </form>-->
-                <form action="{{ url_for('upload_file') }}" class="dropzone">
-                </form>
+    <div class="row align-items-start">
+        <form action="{{ url_for('upload_file') }}" class="dropzone col-md-5">
+        </form>
+        <div class="col align-self-center">
+            <img src="{{ url_for('static', filename='img/arrow-right.png') }}">
         </div>
+        <form class="form-group col-md-5">
+            <textarea class="form-control rounded-2" rows="8">
+            Когда Апрель обильными дождями
+            Разрыхлил землю, взрытую ростками,
+            И, мартовскую жажду утоля,
+            От корня до зеленого стебля
+            Набухли жилки той весенней силой,
+            Что в каждой роще почки распустила
+            </textarea>
+        </form>
+    </div>
 {% endblock %}
